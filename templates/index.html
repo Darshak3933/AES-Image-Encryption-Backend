@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AES Image Encryption</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <h1>AES Image Encryption Tool</h1>
+        <form id="image-form" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="image">Upload Image:</label>
+                <input type="file" id="image" name="image" accept="image/*" required>
+            </div>
+
+            <div class="form-group">
+                <label for="key">Encryption Key (16, 24, or 32 characters):</label>
+                <input type="text" id="key" name="key" placeholder="Enter AES Key" maxlength="32" required>
+            </div>
+
+            <div class="button-group">
+                <button type="button" id="encrypt-btn">Encrypt Image</button>
+                <button type="button" id="decrypt-btn">Decrypt Image</button>
+            </div>
+        </form>
+
+        <div class="result">
+            <h2>Result:</h2>
+            <p id="output-message"></p>
+            <img id="output-image" src="" alt="Output Image" style="display:none;">
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -7,6 +7,8 @@ import os
 
 app = Flask(__name__)
 
+app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'default_secret_key')  # Provide a default if not set
+
 UPLOAD_FOLDER = './static/images'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
